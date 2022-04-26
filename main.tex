@@ -248,4 +248,29 @@ This is a system I worked out to draw quantum circuits before I learned about th
     \caption{This is a basic quantum circuit.}
     \label{fig:basic_quantum_circuit}
 \end{figure}
+
+
+% Use a "%" to start a comment that doesn't get processed by LaTeX
+% ========================================
+% Section: Tips for Circuits
+% ========================================
+\section{Tips for Circuits}
+
+\subsection{The ``Ohms'' Symbol}
+
+To get the ``Ohms'' symbol (captial omega), use \texttt{\textbackslash Omega} in a math environment.
+
+\subsection{Impedance Blocks}
+
+To get an impedance block, use the \texttt{generic} element. See Figure \ref{eqn:generic_element}. Example: Let $\hat{Z}_C = -j 45 \; \Omega$.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{circuitikz}[american]
+       \draw (0,0) node [anchor = east] {$a$}
+          to [generic, *-*, l_=$\hat{Z}_{ab}$, v^=$\hat{V}_{ab}$] ++(4, 0) node [anchor = west] {$b$};
+    \end{circuitikz}
+    \caption{A generic circuit element. }
+    \label{eqn:generic_element}
+\end{figure}
 \end{document}
